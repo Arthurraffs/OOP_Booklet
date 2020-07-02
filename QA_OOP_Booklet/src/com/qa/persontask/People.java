@@ -36,7 +36,7 @@ public class People {
 	@Override
 	public String toString() {
 		return "Employee [Employee ID = " + empID + ", Full Name = " + getFullName() + ", Age = " + age + ", Job Title = "
-				+ jobTitle + ", Time Employed = " + legnthEmployed + "months]";
+				+ jobTitle + ", Time Employed = " + legnthEmployed + " months]";
 	}
 
 	public int getEmpID() {

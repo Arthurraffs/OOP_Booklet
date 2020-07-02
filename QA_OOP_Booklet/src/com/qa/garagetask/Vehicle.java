@@ -9,6 +9,7 @@ public abstract class Vehicle {
 	private String model;
 	private int year;
 	private double hoursWorked;
+	private double billPrice;
 
 	public Vehicle(String cusName, String vhType, String colour, String make, String model, int year, double hoursWorked) {
 		super();
@@ -27,7 +28,7 @@ public abstract class Vehicle {
 	@Override
 	public String toString() {
 		return getVhType() + " [Name = " + getCusName() + ", Make = " + getMake() + ", Model = " 
-				+ getModel() + ", Hours worked = " + getHoursWorked() + "]";
+				+ getModel() + ", Hours worked = " + getHoursWorked() + ", Bill Price = " + getBillPrice() + "]";
 	}
 
 	public String getCusName() {
@@ -85,6 +86,14 @@ public abstract class Vehicle {
 	public void setHoursWorked(double hoursWorked) {
 		this.hoursWorked = hoursWorked;
 	}
-	
-	
+
+	public double getBillPrice() {
+		return billPrice;
+	}
+
+	public void setBillPrice(double billPrice) {
+		this.billPrice = billPrice;
+	}
+
+
 }

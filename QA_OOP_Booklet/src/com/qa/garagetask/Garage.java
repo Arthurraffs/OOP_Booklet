@@ -3,7 +3,7 @@ package com.qa.garagetask;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Garage implements CalcBill {
+public class Garage extends Vehicle implements CalcBill {
 
 	List<Vehicle> vehicles = new ArrayList<>();
 
@@ -18,9 +18,9 @@ public class Garage implements CalcBill {
 				vehicles.remove(vh);
 				break;
 			}
-		}	
+		}
 	}
-	
+
 	public void removeVehicle(String make, String model) {
 		for (Vehicle vh : vehicles) {
 			if (vh.getMake() == make) {
@@ -29,23 +29,35 @@ public class Garage implements CalcBill {
 					break;
 				}
 			}
-		}	
+		}
 	}
 
-	
 	public void printVehiclesInGarage() {
-		if (this.vehicles.size() != 0) {		
-		for (Vehicle vh : vehicles) {
-			System.out.println(vh.toString());
+		if (this.vehicles.size() != 0) {
+			for (Vehicle vh : vehicles) {
+				System.out.println(vh.toString());
 			}
 		} else {
 			System.out.println("The garage is empty.");
-			}
 		}
+	}
 
 	@Override
 	public void calcBill() {
-		// TODO Auto-generated method stub
 		
+		for (Vehicle vh : vehicles) {
+			if (vh instanceof Car) {
+				vh.setBillPrice((getHoursWorked()*12.5) + 200);
+				System.out.println(getHoursWorked());
+			} else if (vh instanceof Motorcycle) {
+				vh.setBillPrice((getHoursWorked()*11) + 150);
+			} else if (vh instanceof Lorry) {
+				vh.setBillPrice((getHoursWorked()*15) + 400);
+			}
+		}
+	}
+
+	public void fixVehicle() {
+		calcBill();
 	}
 }

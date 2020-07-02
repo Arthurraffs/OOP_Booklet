@@ -49,7 +49,7 @@ public class Person extends People {
 	public void searchMethod() {
 		Scanner s = new Scanner(System.in);
 
-		System.out.println("Input the ID you want to search for: ");
+		System.out.println("Input the full name of the person you want to search for: ");
 
 		boolean flag = false;
 
