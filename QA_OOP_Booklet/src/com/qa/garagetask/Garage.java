@@ -47,12 +47,12 @@ public class Garage extends Vehicle implements CalcBill {
 		
 		for (Vehicle vh : vehicles) {
 			if (vh instanceof Car) {
-				vh.setBillPrice((getHoursWorked()*12.5) + 200);
-				System.out.println(getHoursWorked());
+				vh.setBillPrice((vh.getHoursWorked()*12.5) + 200);
+				System.out.println(vh.getHoursWorked());
 			} else if (vh instanceof Motorcycle) {
-				vh.setBillPrice((getHoursWorked()*11) + 150);
+				vh.setBillPrice((vh.getHoursWorked()*11) + 150);
 			} else if (vh instanceof Lorry) {
-				vh.setBillPrice((getHoursWorked()*15) + 400);
+				vh.setBillPrice((vh.getHoursWorked()*15) + 400);
 			}
 		}
 	}
