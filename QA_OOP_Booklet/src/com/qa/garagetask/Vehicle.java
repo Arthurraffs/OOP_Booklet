@@ -2,37 +2,48 @@ package com.qa.garagetask;
 
 public abstract class Vehicle {
 
-	private String name;
+	private String cusName;
+	private String vhType;
 	private String colour;
-	protected String make;
-	protected String model;
-	protected int year;
-	protected int currentYear = 2020;
-	protected double price;
-	protected double hoursWorked;
+	private String make;
+	private String model;
+	private int year;
+	private double hoursWorked;
 
-	public abstract double calculateBill();
-
-	public Vehicle(String name, String colour, String make, String model, int year, double price, double hoursWorked) {
+	public Vehicle(String cusName, String vhType, String colour, String make, String model, int year, double hoursWorked) {
 		super();
-		this.name = name;
+		this.cusName = cusName;
+		this.vhType = vhType;
 		this.colour = colour;
 		this.make = make;
 		this.model = model;
 		this.year = year;
-		this.price = price;
 		this.hoursWorked = hoursWorked;
 	}
 
 	public Vehicle() {
 	}
-
-	public String getName() {
-		return name;
+	
+	@Override
+	public String toString() {
+		return getVhType() + " [Name = " + getCusName() + ", Make = " + getMake() + ", Model = " 
+				+ getModel() + ", Hours worked = " + getHoursWorked() + "]";
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getCusName() {
+		return cusName;
+	}
+
+	public void setCusName(String cusName) {
+		this.cusName = cusName;
+	}
+
+	public String getVhType() {
+		return vhType;
+	}
+
+	public void setVhType(String vhType) {
+		this.vhType = vhType;
 	}
 
 	public String getColour() {
@@ -67,14 +78,6 @@ public abstract class Vehicle {
 		this.year = year;
 	}
 
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
 	public double getHoursWorked() {
 		return hoursWorked;
 	}
@@ -82,5 +85,6 @@ public abstract class Vehicle {
 	public void setHoursWorked(double hoursWorked) {
 		this.hoursWorked = hoursWorked;
 	}
-
+	
+	
 }
